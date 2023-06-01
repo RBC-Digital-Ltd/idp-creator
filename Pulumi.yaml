@@ -1,0 +1,3 @@
+name: idp-creator
+runtime: nodejs
+description: A Pulumi Program to create IDP records across all RBC AWS Accounts
