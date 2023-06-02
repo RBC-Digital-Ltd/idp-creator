@@ -1,4 +1,4 @@
-name: Deploy RBC Life Dev
+name: Preview Pull Request
 
 on:
   push:
@@ -35,7 +35,7 @@ jobs:
 
       - uses: pulumi/actions@v3
         with:
-          command: up
+          command: preview
           stack-name: prod # When using an individual account, only use stack-name.
         env:
           PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_TOKEN }}
