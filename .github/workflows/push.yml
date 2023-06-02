@@ -14,7 +14,7 @@ jobs:
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
-    environment: "RBC Life Dev"
+    environment: "rbc-life-dev"
 
     steps:
       - name: Checkout
