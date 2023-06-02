@@ -23,16 +23,16 @@ const idp = new awsNative.iam.OIDCProvider(
 const role = new awsNative.iam.Role(
   "GithubTerraformDeployRole",
   {
-    managedPolicyArns: ["arn:aws:iam::aws:policy/AdministratorAccess"],
     assumeRolePolicyDocument: JSON.stringify({
       Version: "2012-10-17",
       Statement: [
         {
-          Action: "sts:AssumeRoleWithWebIdentity",
           Effect: "Allow",
           Principal: {
-            Federated: idp.arn,
+            Federated:
+              "arn:aws:iam::036486846851:oidc-provider/token.actions.githubusercontent.com",
           },
+          Action: "sts:AssumeRoleWithWebIdentity",
           Condition: {
             StringEquals: {
               "token.actions.githubusercontent.com:aud": "sts.amazonaws.com",
@@ -50,4 +50,4 @@ const role = new awsNative.iam.Role(
 // Export the name of the bucket
 export const roleName = role.roleName;
 export const roleArn = role.arn;
-export const idpArn = idp.arn
+export const idpArn = idp.arn;
