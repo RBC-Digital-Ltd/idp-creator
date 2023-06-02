@@ -20,7 +20,7 @@ const role = new awsNative.iam.Role(
           Effect: "Allow",
           Principal: {
             Federated:
-              "arn:aws:iam::036486846851:oidc-provider/token.actions.githubusercontent.com",
+              idp.arn
           },
           Action: "sts:AssumeRoleWithWebIdentity",
           Condition: {
