@@ -24,6 +24,9 @@ const role = new awsNative.iam.Role(
           },
           Action: "sts:AssumeRoleWithWebIdentity",
           Condition: {
+            StringLike: {
+              "token.actions.githubusercontent.com:sub": "repo:RBC-Digital-Ltd/*"
+            },
             StringEquals: {
               "token.actions.githubusercontent.com:aud": "sts.amazonaws.com",
             },
