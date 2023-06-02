@@ -1,11 +1,4 @@
-import * as pulumi from "@pulumi/pulumi";
-import * as aws from "@pulumi/aws";
-import * as awsx from "@pulumi/awsx";
 import * as awsNative from "@pulumi/aws-native";
-
-const provider = new awsNative.Provider("provider", {
-  region: "eu-west-1",
-});
 
 // Create an IDP Provider
 const idp = new awsNative.iam.OIDCProvider(
@@ -14,9 +7,6 @@ const idp = new awsNative.iam.OIDCProvider(
     thumbprintList: ["6938fd4d98bab03faadb97b34396831e3780aea1"],
     url: "https://token.actions.githubusercontent.com",
     clientIdList: ["sts.amazonaws.com"],
-  },
-  {
-    provider,
   }
 );
 
@@ -41,9 +31,6 @@ const role = new awsNative.iam.Role(
         },
       ],
     }),
-  },
-  {
-    provider,
   }
 );
 
