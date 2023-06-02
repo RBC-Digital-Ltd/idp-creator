@@ -7,7 +7,7 @@ const idp = new awsNative.iam.OIDCProvider(
     thumbprintList: ["6938fd4d98bab03faadb97b34396831e3780aea1"],
     url: "https://token.actions.githubusercontent.com",
     clientIdList: ["sts.amazonaws.com"],
-  }
+  },
 );
 
 const role = new awsNative.iam.Role(
@@ -31,6 +31,9 @@ const role = new awsNative.iam.Role(
         },
       ],
     }),
+  },
+  {
+    dependsOn: idp
   }
 );
 
