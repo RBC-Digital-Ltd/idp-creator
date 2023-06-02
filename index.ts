@@ -36,7 +36,7 @@ const role = new awsNative.iam.Role(
           Condition: {
             StringLike: {
               "token.actions.githubusercontent.com:sub":
-                "repo:RBC-Digital-Ltd/*:*",
+                "repo:RBC-Digital-Ltd/*",
             },
             StringEquals: {
               "token.actions.githubusercontent.com:aud": "sts.amazonaws.com",
@@ -54,3 +54,4 @@ const role = new awsNative.iam.Role(
 // Export the name of the bucket
 export const roleName = role.roleName;
 export const roleArn = role.arn;
+export const idpArn = idp.arn
