@@ -13,6 +13,7 @@ const idp = new awsNative.iam.OIDCProvider(
 const role = new awsNative.iam.Role(
   "GithubTerraformDeployRole",
   {
+    managedPolicyArns: ["arn:aws:iam::aws:policy/AWSCloudFormationFullAccess", "arn:aws:iam::aws:policy/AmazonS3FullAccess", "arn:aws:iam::aws:policy/AWSLambda_FullAccess", "arn:aws:iam::aws:policy/CloudWatchFullAccess", "arn:aws:iam::aws:policy/AmazonAPIGatewayAdministrator"],
     assumeRolePolicyDocument: JSON.stringify({
       Version: "2012-10-17",
       Statement: [
