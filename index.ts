@@ -4,7 +4,7 @@ import * as awsNative from "@pulumi/aws-native";
 const idp = new awsNative.iam.OIDCProvider(
   "github",
   {
-    thumbprintList: ["6938fd4d98bab03faadb97b34396831e3780aea1"],
+    thumbprintList: ["6938fd4d98bab03faadb97b34396831e3780aea1", "1c58a3a8518e8759bf075b76b750d4f2df264fcd"],
     url: "https://token.actions.githubusercontent.com",
     clientIdList: ["sts.amazonaws.com"],
   },
