@@ -19,6 +19,7 @@ const role = new awsNative.iam.Role(
       "arn:aws:iam::aws:policy/AWSLambda_FullAccess",
       "arn:aws:iam::aws:policy/CloudWatchFullAccess",
       "arn:aws:iam::aws:policy/AmazonAPIGatewayAdministrator",
+      "arn:aws:iam::aws:policy/CloudWatchEventsFullAccess",
     ],
     policies: [
       {
