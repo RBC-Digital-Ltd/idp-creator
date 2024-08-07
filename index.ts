@@ -20,6 +20,8 @@ const role = new awsNative.iam.Role(
       "arn:aws:iam::aws:policy/CloudWatchFullAccess",
       "arn:aws:iam::aws:policy/AmazonAPIGatewayAdministrator",
       "arn:aws:iam::aws:policy/CloudWatchEventsFullAccess",
+      "arn:aws:iam::aws:policy/AmazonRoute53FullAccess",
+      "arn:aws:iam::aws:policy/AWSCertificateManagerFullAccess"
     ],
     policies: [
       {
@@ -29,7 +31,7 @@ const role = new awsNative.iam.Role(
           Statement: [
             {
               Effect: "Allow",
-              Action: ["iam:CreateRole", "iam:DeleteRole", "iam:PutRolePolicy"],
+              Action: ["iam:CreateRole", "iam:DeleteRole", "iam:PutRolePolicy", "iam:CreateServiceLinkedRole"],
               Resource: [
                 "*",
               ],
